@@ -4,6 +4,9 @@
   const handleClick = () => {
     beltColor = "Orange";
   };
+  const handleInput = (e) => {
+    beltColor = e.target.value;
+  };
 </script>
 
 <style>
@@ -28,6 +31,8 @@
 
 <main>
   <h1>Hello {name}!</h1>
-  <p>Belt Color: {beltColor}</p>
+  <p style="color: {beltColor}">Belt Color: {beltColor}</p>
   <button on:click={handleClick}>update belt colour</button>
+  <input type="text" on:input={handleInput} value={beltColor} />
+  <input type="text" bind:value={beltColor} />
 </main>
