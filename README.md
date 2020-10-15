@@ -21,3 +21,18 @@
 ## 2020-10-14
 
 - `bind:value`라는 속성을 통해서 `on:input={}` `value={}`라는 것을 바인딩 가능하다. 양방향 바인딩
+
+## 2020-10-15
+
+`$: fullName = value1 + value2` 이렇게 두가지의 값을 가지고있다면 하나가 업데이트되면 fullName이 업데이트 된다.
+
+`$: console.log(fullName)` 이렇게하면 fullName이 업데이트 될때마다 실행되는 마법!
+
+```svelte
+$: {
+  console.log('test');
+  console.log('test');
+}
+```
+
+이런 방식으로도 사용가능!
