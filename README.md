@@ -18,24 +18,11 @@
 
 ---
 
-## 2020-10-14
+## 2020-10-19
 
-- `bind:value`라는 속성을 통해서 `on:input={}` `value={}`라는 것을 바인딩 가능하다. 양방향 바인딩
+스벨트에서는 `<button on:click={handleClick} />` 이런식으로 작성하면 html에 렌더링되면서 이 함수들이 바로 실행된다.
 
-## 2020-10-15
-
-`$: fullName = value1 + value2` 이렇게 두가지의 값을 가지고있다면 하나가 업데이트되면 fullName이 업데이트 된다.
-
-`$: console.log(fullName)` 이렇게하면 fullName이 업데이트 될때마다 실행되는 마법!
-
-```svelte
-$: {
-  console.log('test');
-  console.log('test');
-}
-```
-
-이런 방식으로도 사용가능!
+그래서 인라인 함수를 만들 수 있다. `<button on:click={() => handleClick(person.id)} />` 이렇게 작성하면 자동으로 함수가 호출되지 않는다.
 
 ## 2020-10-16
 
@@ -65,3 +52,23 @@ if (a.length != 0) {
 ```
 
 👏👏👏👏👏 신기...
+
+## 2020-10-15
+
+`$: fullName = value1 + value2` 이렇게 두가지의 값을 가지고있다면 하나가 업데이트되면 fullName이 업데이트 된다.
+
+`$: console.log(fullName)` 이렇게하면 fullName이 업데이트 될때마다 실행되는 마법!
+
+```svelte
+$: {
+  console.log('test');
+  console.log('test');
+}
+```
+
+이런 방식으로도 사용가능!
+
+## 2020-10-14
+
+- `bind:value`라는 속성을 통해서 `on:input={}` `value={}`라는 것을 바인딩 가능하다. 양방향 바인딩
+

@@ -4,6 +4,11 @@
     { name: "mario", beltColor: "orange", age: 45, id: 2 },
     { name: "luigi", beltColor: "brown", age: 35, id: 3 },
   ];
+
+  const handleClick = (id) => {
+    // delete the person from people
+    people = people.filter((person) => person.id !== id);
+  };
 </script>
 
 <style>
@@ -12,12 +17,6 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
-  }
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
   }
   @media (min-width: 640px) {
     main {
@@ -31,6 +30,7 @@
     <div>
       <h4>{person.name}</h4>
       <p>{person.age} years old, {person.bletColor} belt.</p>
+      <button on:click={() => handleClick(person.id)}>delete</button>
     </div>
   {:else}
     <p>There are no people to show...</p>
