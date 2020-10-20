@@ -18,6 +18,20 @@
 
 ---
 
+## 2020-10-20
+
+스벨트에서 조건문을 사용하는 방법
+
+```svelte
+{#if num > 20}
+  <p>Greater than 20</p>
+{:else if num > 5}
+  <p>Greater than 5</p>
+{:else}
+  <p>Not greater than 5</p>
+{/if}
+```
+
 ## 2020-10-19
 
 스벨트에서는 `<button on:click={handleClick} />` 이런식으로 작성하면 html에 렌더링되면서 이 함수들이 바로 실행된다.
