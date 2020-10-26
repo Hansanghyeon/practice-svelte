@@ -18,6 +18,17 @@
 
 ---
 
+## 2020-10-26
+
+- once - 이벤트가 한 번만 발생할 수 있는지 확인 (처리기 제거)
+- preventDefault - 기본 작업 방지 (run e.preventDefault())
+- self - 클릭 한 요소가 타겟 인 경우에만 이벤트를 시작합니다.
+ 
+`<div class="backdrop" class:promo={isPromo} on:click|self>` 이렇게 self를 통해서 해당요소에서만 발생하는 이벤트를 감지 실행
+
+`<button on:click|once={toggleModal}>Open Modal</button>` 이렇게 하면 해당 `toggleModal`이라는 함수는 한번만 실행하게 할 수 있다.
+
+
 ## 2020-10-25
 
 스벨트에서 컴포넌트의 속성값과 매개변수값이 같으면 요약해서 작성해도된다.
