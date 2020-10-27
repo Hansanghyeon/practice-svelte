@@ -35,7 +35,15 @@
   }
 </style>
 
-<Modal message="Hey, I am a prop value" {showModal} on:click={toggleModal} />
+<Modal {showModal} on:click={toggleModal}>
+  <h3 slot="title">Add a New person</h3>
+  <form>
+    <input type="text" placeholder="name" />
+    <input type="text" placeholder="belt color" />
+    <button>Add Person</button>
+  </form>
+</Modal>
+
 <main>
   <button on:click|once={toggleModal}>Open Modal</button>
   {#each people as person (person.id)}
