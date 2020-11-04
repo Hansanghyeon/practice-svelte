@@ -18,6 +18,14 @@
 
 ---
 
+## 2020-11-04
+
+input의 여러값의 상태를 저장하는 변수같은 경우는 일일이 변수를 만들어서 대입하는 것보다는 배열에 그룹으로 바인딩한는 것이 더 좋다
+
+`<input bind:group={skils} />`
+
+`<select value:bind={beltColor}>` 동일하게 드롭다운 메뉴도 가능하다.
+
 ## 2020-10-27
 
 React의 React children 과 같이 svelte에서는 slot이라 부르는 것같다?
