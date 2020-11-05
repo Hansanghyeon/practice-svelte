@@ -1,4 +1,8 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
+  let dispatch = createEventDispatcher();
+
   let name;
   let beltColor;
   let age;
@@ -8,13 +12,19 @@
   let skills = [];
 
   const handleSubmit = () => {
-    console.log(name, beltColor, age, skills);
+    const person = {
+      name,
+      beltColor,
+      age,
+      skills,
+      id: Math.random(),
+    };
+    dispatch("addPerson", person);
   };
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
   <input type="text" placeholder="name" bind:value={name} />
-  <input type="text" placeholder="belt color" bind:value={beltColor} />
   <input type="number" placeholder="age" bind:value={age} />
   <!-- svelte-ignore a11y-label-has-associated-control -->
   <label>Skills:</label>

@@ -19,7 +19,11 @@
     people = people.filter((person) => person.id !== id);
   };
 
-  let num = 5;
+  const addPerson = (e) => {
+    const person = e.detail;
+    people = [person, ...people];
+    showModal = false;
+  };
 </script>
 
 <style>
@@ -37,18 +41,18 @@
 </style>
 
 <Modal {showModal} on:click={toggleModal}>
-  <AddPersonForm />
+  <AddPersonForm on:addPerson={addPerson} />
 </Modal>
 
 <main>
-  <button on:click|once={toggleModal}>Open Modal</button>
+  <button on:click={toggleModal}>Open Modal</button>
   {#each people as person (person.id)}
     <div>
       <h4>{person.name}</h4>
       {#if person.beltColor === 'black'}
         <p><strong>MASTER NINJA</strong></p>
       {/if}
-      <p>{person.age} years old, {person.bletColor} belt.</p>
+      <p>{person.age} years old, {person.beltColor} belt.</p>
       <button on:click={() => handleClick(person.id)}>delete</button>
     </div>
   {:else}
