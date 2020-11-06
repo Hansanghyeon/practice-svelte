@@ -18,6 +18,25 @@
 
 ---
 
+## 2020-11-06
+
+Project structure
+
+- App
+  - Header
+  - Footer
+  - CreatePollForm
+  - PollList
+    - PollDetails
+  - etc
+    - Button
+    - Card
+    - Tabs
+
+- Store
+  - CraetePollForm
+  - PollList
+
 ## 2020-11-05
 
 하위 컴포넌트의 `form`에서 저장한 값을 부모 컴포넌트의 변수 배열에 넣어야하는데
