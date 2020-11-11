@@ -1,6 +1,14 @@
 <script>
-  import Header from "./Header.svelte";
-  import Footer from "./Footer.svelte";
+  import Header from "./components/Header.svelte";
+  import Footer from "./components/Footer.svelte";
+  import Tabs from "./shared/Tabs.svelte";
+  // tabs
+  let items = ["Current Polls", "Add New Poll"];
+  let activeItem = "Current Polls";
+
+  const tabChange = (e) => {
+    activeItem = e.detail;
+  };
 </script>
 
 <style>
@@ -12,13 +20,11 @@
 
 <Header />
 <main>
-  <p>
-    Velit quis ipsum nisi nulla labore et incididunt est. Adipisicing esse
-    consequat fugiat ea exercitation veniam proident excepteur culpa esse
-    reprehenderit excepteur exercitation sunt. Pariatur ad ullamco commodo sint
-    aliqua laborum ut ut ea nisi sunt Lorem. Magna cillum officia sit qui cillum
-    deserunt aliqua. Sunt voluptate ipsum do adipisicing ullamco. Elit do minim
-    minim velit. Pariatur qui ea ut est adipisicing culpa laboris mollit sint.
-  </p>
+  <Tabs {activeItem} {items} on:tabChange={tabChange} />
+  {#if activeItem === 'Current Polls'}
+    <p>Poll list component goes here</p>
+  {:else if activeItem === 'Add New Poll'}
+    <p>new poll form component goes here</p>
+  {/if}
 </main>
 <Footer />
